@@ -1,7 +1,7 @@
 ## Step 1: Deploy a simple app
 
 ```
-kubectl create deployment web --image-nginx --replicas=2
+kubectl create deployment web --image nginx --replicas=2
 ```
 
 ## Step 2: Expose as ClusterIP
@@ -14,8 +14,8 @@ kubectl get svc
 ## Step 3: Access using busybox pod
 
 ```
-kubectl run test --image-busybox -it --rm -- sh
-wget -qo- http://web.<namespace>.svc.cluster.local
+kubectl run test --image busybox -it --rm -- sh
+wget  http://web-svc.<namespace>.svc.cluster.local
 ```
 
 ## Step 4: Clean up
